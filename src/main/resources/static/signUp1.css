@@ -1,0 +1,117 @@
+*{
+    font-family: manrope, sans serif;
+    margin: 0;
+}
+@font-face {
+    font-family: "Manrope" ;
+    src:
+      local("Manrope"),
+      url("manrope-extrabold.otf")
+}
+body{
+    background-color: #F1F3F4;
+}
+header{
+    font-weight: bolder;
+    margin: 10px 5px 80px 1px;
+    display: flex;
+    align-items: center;
+}
+logo{
+    padding-left: 80px;
+}
+logo img{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+nav{
+    font-size: 17px;
+    flex: 1;
+    text-align: right;
+    padding-right: 50px;
+}
+nav ul li{
+    display: inline-block;
+    padding: 20px;
+    position:relative;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color:coral;
+}
+nav ul li a:hover {
+    border-bottom: 3px solid coral;
+}
+nav ul li a h3:hover {
+    border-bottom: 3px solid coral;
+}
+ul li a.SignUp{
+    padding: 10px;
+    color: azure;
+    background: coral;
+    border: 1px solid coral;
+    border-radius: 50px;
+}
+.toggle img{
+    color: #fff;
+    font-size: 1.5rem;
+    display: none;
+}
+.drop{
+    display: none;
+}
+main{
+    display: grid;
+    justify-content: center;
+    margin: 50px;
+}
+form{
+    display: grid;
+    justify-content: center;
+    border: 1px solid #B3B3B3;
+    border-radius: 5px;
+    padding: 50px;
+}
+form h2{
+    padding-bottom: 15px;
+    text-align: center;
+    color: coral;
+    font-weight: bolder;
+}
+form input, p{
+    width: 100%;
+    padding-bottom: 8px;
+}
+form .agree{
+    display: flex;
+    margin-bottom: 10px;
+}
+form .agree input{
+    width: 12px;
+    margin-right: 5px;
+}
+button{
+    font-size: 15px;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid coral;
+    border-radius: 3px;
+    background: coral;
+    color: white;
+}
+.footer{
+text-align: center;
+padding: 1rem 0;
+background-color: #343a40; /* Steel blue */
+color: #fff;
+bottom: 0;
+width: 100%;
+}
+.footer img{
+display: inline;
+width: 20px;
+height: 20px;
+margin: 2px 2px;
+}

@@ -1,0 +1,181 @@
+* {
+    font-family: 'Lato', sans-serif; /* Use Roboto or fall back to a sans-serif font */
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    background: rgb(102, 193, 108);
+}
+.navbar{
+    display: flex;
+    margin: 0px 50px 40px 10px;
+    justify-content: space-between ;
+    align-items: center;
+    padding: 20px;
+}
+
+header .navbar logo{
+    display: flex;
+    margin-left: 20px;
+    color: white
+}
+
+header .navbar logo img{
+    padding-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+header .navbar nav{
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .navbar nav ul{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+}
+
+header .navbar nav ul li{
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 15px;
+    color: tomato;
+    padding: 10px;
+}
+
+header .navbar nav ul li a{
+    text-decoration: none;
+    color:cornsilk;
+}
+
+header .navbar nav ul li a img{
+    width: 50px;
+    height: 50px;
+}
+
+.container{
+    display: flex;
+    margin: 20px 0px 10px 40px;
+}
+aside {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px 0px 20px;
+    width: 180px;
+    height: 100vh;
+    position: sticky; /* Make the aside sticky */
+    top: 0;
+
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgb(102, 193, 108);
+}
+
+.content .plus{
+    display: flex;
+}
+
+.content h3 a{
+    text-decoration: none;
+    color: black;
+    margin-right: 3px;
+}
+
+.content .plus img{
+    height: 20px;
+    width: 20px;
+}
+
+.welcome {
+    display: flex;
+    margin: 20px 0px 0px 0px;
+    position: sticky; /* Make it stick */
+    top: 0;
+    background: white; /* Ensures it doesn't blend into the background */
+
+}
+
+.welcome h2{
+    border-radius: 10px;
+    background: palevioletred;
+    margin-right: 10px;
+    border-right: none
+}
+
+.welcome p{
+    font-size: 20px;
+}
+
+aside h2{
+    margin: 20px 0px 30px 0px;
+}
+aside h3{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;;
+}
+h3#down {
+    margin-bottom: 200px;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    flex-direction: column;
+}
+
+main .status {
+    margin-left: 30px;
+    position: sticky; /* Make the "Done" heading sticky */
+    top: 0; /* Stick to the top of the viewport */
+    background: white; /* Add a background to prevent overlap */
+    padding: 10px; /* Add some padding for better appearance */
+}
+main .task{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(102, 193, 108);
+    border-radius: 20px;
+    padding: 30px;
+    width: 500px;
+    height: 70px;
+    margin: 30px;
+
+}
+
+main .task .top{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+main .task .top input{
+    margin-right: 10px;
+    background: coral;
+    accent-color: coral;
+    border: none;
+}
+
+.task .top{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.task .top input{
+    margin-right: 10px;
+    background: coral;
+    accent-color: coral;
+    border: none;
+}
+
+.task .top label{
+    flex-basis: 95%;
+    display: flex;
+    justify-content: space-between;
+}

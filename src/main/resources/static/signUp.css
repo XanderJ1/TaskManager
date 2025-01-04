@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+
+logo{
+    display: flex;
+    height: 50px;
+    width: 15px;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    background: #f1f1f1;
+
+}
+main{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #f1f1f1;
+}
+aside{
+}
+aside img{
+    width: 40rem;
+    flex-basis: 40%;
+    height: 85vh;
+    margin-top: 20px;
+}
+.other{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f1f1f1;
+}
+
+.other .google{
+    margin: 20px 0px 0px 0px;
+    border: 1px solid black;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+.other p{
+    margin-bottom: 10px;
+}
+.other img{
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+}
+.other h3{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+main h3{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+main form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    margin: 50px;
+}
+
+.test{
+border: 1px solid black;
+border-radius: 10px;
+}
+
+main form input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+main form select{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+form .gree{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+form .gree input{
+    width: 12px;
+    margin-right: 5px;
+}
+
+main form button{
+    border: 1px solid black;
+    height: 30px;
+    color: white;
+    background-color: rgb(26, 25, 25);
+    border-radius: 20px;
+}

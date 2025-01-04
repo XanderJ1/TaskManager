@@ -1,0 +1,22 @@
+<!Doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+
+<div class="task" th:each="task : ${test}">
+    <div class="top">
+        <input type="checkbox">
+        <label>
+        <h3 th:text="${task.title}"></h3>
+        <p th:text="${task.priority}"></p>
+        </label>
+    </div>
+    <p th:text="${task.description}"></p>
+</div>
+</body>
+</html>
+

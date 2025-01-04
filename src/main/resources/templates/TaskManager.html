@@ -1,0 +1,71 @@
+<!Doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="TaskManager.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <logo>
+            <h3>TaskManager</h3>
+            <img src="logo.png" alt="TaskManager">
+        </logo>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tasks</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#"><img src="account.svg"></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <aside>
+        <div class="welcome">
+            <h2>&nbsp;</h2>
+            <p>Welcome Bashir! </p>
+        </div>
+
+        <div class="content">
+            <h2>Categories</h2>
+            <div class="plus">
+                <h3>
+                    <a href="createTask.html">Create Task</a>
+                </h3>
+                <img src="plus.svg" alt="plus sign">
+            </div>
+            <h3>Tasks</h3>
+            <h3>Idle Tasks</h3>
+            <h3>Pending Tasks</h3>
+            <h3 id="down">Done Tasks</h3>
+        </div>
+    </aside>
+    <main>
+        <div class="status">
+            <h2>Done</h2>
+        </div>
+        <div class="task" th:each="task : ${test}">
+            <div class="top">
+                <input type="checkbox">
+                <label>
+                    <h3 th:text="${task.title}"></h3>
+                    <p th:text="${task.priority}"></p>
+                </label>
+            </div>
+            <p th:text="${task.description}"></p>
+        </div>
+
+    </main>
+</div>
+
+
+<!--Footer-->
+
+</body>
+</html>
