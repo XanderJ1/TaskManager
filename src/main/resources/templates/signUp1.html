@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="SignUp1.css">
+    <link rel="stylesheet" href="All.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go</title>
+</head>
+<body>
+<header>
+    <logo>
+        <a th:href="index.html"><h3>UExpress</h3></a>
+    </logo>
+    <nav>
+        <ul>
+            <li><a th:href="index.html"><h3>Home</h3></a></li>
+            <li><a th:href="TaskManager.html"><h3>TaskManager</h3></a></li>
+            <li><a th:href="Contact.html"><h3>Contact</h3></a></li>
+            <li><a class="SignUp" th:href="SignUp.html">SignUp</a></li>
+            <li><a class="SignUp" th:href="Signin.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="toggle-parent">
+        <div class="logo">
+            <img src="../media/bar.svg">
+        </div>
+        <ul class="drop">
+            <li><a th:href="index.html"><h3>Home</h3></a></li>
+            <li><a th:href="Package.html"><h3>Package</h3></a></li>
+            <li><a th:href="Contact.html"><h3>Contact</h3></a></li>
+            <li><a th:href="SignUp.html"><h3>SignUp</h3></a></li>
+            <li><a th:href="Signin.html"><h3>Login</h3></a></li>
+        </ul>
+    </div>
+</header>
+<main>
+    <form action="/api/users/addUser" method="post">
+        <h2>Sign Up</h2>
+
+        <p><label for="email">Email</label></p>
+        <input type="text" id="email"  name="email" placeholder="Full name" required>
+        <p><label for="username">Username</label></p>
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <p><label for="password">Password</label></p>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <p><label for="role">Role</label></p>
+        <select id="role" name="role">
+            <option value="" disabled selected>Select role</option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="CLIENT">CLIENT</option>
+        </select>
+
+        <div class="agree">
+            <input type="checkbox" id="checkbox"><p1>Agree to Terms and conditions</p1>
+        </div>
+        <button>Sign Up</button>
+    </form>
+
+</main>
+<div class="footer">
+    <div class="CONTACT">
+        <p>Contact Us via</p>
+        <a href="#"><img src="../media/facebook.png"></a>
+        <a href="#"><img src="../media/twitter.png"></a>
+        <a href="#"><img src="../media/instagram.png"></a>
+    </div>
+    <p>&copy; 2024 ENTG4. All rights reserved.</p>
+</div>
+</body>
+</html>

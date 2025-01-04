@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="signUp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <nav>
+
+    </nav>
+</header>
+
+<div class="container">
+    <main>
+        <div class="other">
+            <h3>Create Your Account</h3>
+            <p>Let's get started with your 30 days free trial</p>
+            <div class="google">
+                <img src="google.svg" alt="Google">
+                <p>Sign Up with Google</p>
+            </div>
+        </div>
+
+        <form action="/auth/adduser" th:object="${user}" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <select id="userRole" name="userRole">
+            <option disabled selected> Select Role</option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="USER">USER</option>
+        </select>
+
+            <div class="gree">
+                <input type="checkbox" id="checkbox">
+                <p1>Agree to Terms and conditions</p1>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </main>
+
+    <aside>
+        <img src="task.jpg" alt="">
+    </aside>
+</div>
+
+</body>
+</html>
