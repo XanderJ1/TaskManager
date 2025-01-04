@@ -1,5 +1,6 @@
 package com.bash.taskmanager.Service;
 
+import com.bash.taskmanager.Data.Models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.Authentication;
@@ -22,7 +23,8 @@ public class TokenService {
     @Autowired
     private JwtDecoder jwtDecoder;
 
-    public String generateJwt(Authentication auth){
+    public String generateJwt(User auth){
+
 
         Instant now = Instant.now();
 
@@ -33,7 +35,7 @@ public class TokenService {
         JwtClaimsSet claims = JwtClaimsSet.builder()
                 .issuer("self")
                 .issuedAt(now)
-                .subject(auth.getName())
+                .subject(auth.getUsername())
                 .claim("roles", scope)
                 .build();
         return jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();

@@ -7,6 +7,7 @@ import com.bash.taskmanager.Data.Models.User;
 import com.bash.taskmanager.Data.Models.Role;
 import com.bash.taskmanager.Repository.RoleRepository;
 import com.bash.taskmanager.Repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.core.GrantedAuthority;
@@ -27,17 +28,21 @@ import java.util.stream.Collectors;
 
 @Service
 @Primary
+@RequiredArgsConstructor
 public class UserService implements UserDetailsService {
 
-    @Autowired
-    RoleRepository roleRepository;
-    @Autowired
-    private UserRepository userRepository;
 
-    @Autowired
-    PasswordEncoder passwordEncoder;
-    @Autowired
-    UserDTOMapper userDTOMapper;
+    private final RoleRepository roleRepository;
+
+    private final UserRepository userRepository;
+
+
+    private final PasswordEncoder passwordEncoder;
+
+
+    private final UserDTOMapper userDTOMapper;
+
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
@@ -47,9 +52,7 @@ public class UserService implements UserDetailsService {
 
     }
 
-    public UserService(UserRepository userRepository){
-        this.userRepository = userRepository;
-    }
+
 
     public List<UserDTO> fetchAll(){
         return userRepository.findAll()
@@ -73,8 +76,8 @@ public class UserService implements UserDetailsService {
             Role role = roleRepository.findByAuthority(userRole.name())
                     .orElseGet(() -> roleRepository.save(new Role(userRole.name())));
             roles.add(role);
-            String  password = passwordEncoder.encode(registrationDTO.getPassword());
-            User user = new User(registrationDTO.getUsername(), password, registrationDTO.getEmail(), roles);
+            String  encodedPassword = passwordEncoder.encode(registrationDTO.getPassword());
+            User user = new User(registrationDTO.getUsername(), encodedPassword, registrationDTO.getEmail(), roles);
             userRepository.save(user);
     }
 

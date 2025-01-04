@@ -1,5 +1,6 @@
 package com.bash.taskmanager.Security;
 
+import com.bash.taskmanager.Service.UserService;
 import com.nimbusds.jose.jwk.*;
 import com.nimbusds.jose.jwk.source.*;
 import com.nimbusds.jose.proc.SecurityContext;
@@ -9,6 +10,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -34,7 +36,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationManager authManager(UserDetailsService detailsService){
+    public AuthenticationManager authManager(UserService detailsService){
         DaoAuthenticationProvider daoProvider = new DaoAuthenticationProvider();
         daoProvider.setUserDetailsService(detailsService);
         return new ProviderManager(daoProvider);
@@ -42,7 +44,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-                .csrf(csrf -> csrf.disable())
+                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/auth/**").permitAll();
                     auth.anyRequest().authenticated();
