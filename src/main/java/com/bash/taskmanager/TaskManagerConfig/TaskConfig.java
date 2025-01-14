@@ -12,6 +12,9 @@ import java.util.List;
 import static com.bash.taskmanager.Data.Models.Task.Status.DONE;
 import static com.bash.taskmanager.Data.Models.Task.Status.INITIATED;
 
+/**
+ * Preloads tasks in the database
+ */
 @Configuration
 public class TaskConfig {
 

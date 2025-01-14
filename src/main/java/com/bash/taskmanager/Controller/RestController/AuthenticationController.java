@@ -20,7 +20,7 @@ public class AuthenticationController {
     private AuthenticationService authenticationService;
 
     @PostMapping("/register")
-    public User registerUser(@RequestBody RegistrationDTO body){
+    public User addUser(@RequestBody RegistrationDTO body){
         return authenticationService.registerUser(body.getUsername(), body.getPassword(), body.getEmail());
     }
 
@@ -28,6 +28,6 @@ public class AuthenticationController {
     public LoginResponseDTO loginUser(@RequestBody RegistrationDTO body){
         System.out.println(body.getUsername() + body.getPassword());
         return authenticationService.loginUser(body.getUsername(), body.getPassword());
-     }
+    }
 
 }

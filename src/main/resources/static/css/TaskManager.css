@@ -1,62 +1,70 @@
 * {
-    font-family: 'Lato', sans-serif; /* Use Roboto or fall back to a sans-serif font */
+    font-family: 'Lato', sans-serif;
     padding: 0;
     margin: 0;
 }
-
-header{
-    background: rgb(102, 193, 108);
-}
-.navbar{
-    display: flex;
-    margin: 0px 50px 40px 10px;
-    justify-content: space-between ;
-    align-items: center;
-    padding: 20px;
+header {
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-header .navbar logo{
-    display: flex;
-    margin-left: 20px;
-    color: white
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-header .navbar logo img{
-    padding-left: 5px;
-    width: 20px;
-    height: 20px;
-}
-header .navbar nav{
-    margin-left: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Logo Styling */
+logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo image and text */
 }
 
-header .navbar nav ul{
-    display: flex;
-    list-style: none;
-    text-decoration: none;
+logo h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #fff;
 }
 
-header .navbar nav ul li{
-    margin-right: 15px;
-    text-decoration: none;
-    font-size: 15px;
-    color: tomato;
-    padding: 10px;
+logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
 }
 
-header .navbar nav ul li a{
-    text-decoration: none;
-    color:cornsilk;
+/* Navigation Styling */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-header .navbar nav ul li a img{
-    width: 50px;
-    height: 50px;
+nav ul li {
+  display: inline-block;
 }
 
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 5px 10px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #444;
+  color: #00bcd4; /* Highlight color */
+  border-radius: 5px;
+}
 .container{
     display: flex;
     margin: 20px 0px 10px 40px;
@@ -74,6 +82,7 @@ aside {
 .content{
     display: flex;
     flex-direction: column;
+    height: 100vh;
     border-right: 1px solid rgb(102, 193, 108);
 }
 
@@ -88,8 +97,8 @@ aside {
 }
 
 .content .plus img{
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
 }
 
 .welcome {
@@ -104,8 +113,7 @@ aside {
 .welcome h2{
     border-radius: 10px;
     background: palevioletred;
-    margin-right: 10px;
-    border-right: none
+    margin: 0px 10px 20px 0px;
 }
 
 .welcome p{
@@ -118,7 +126,8 @@ aside h2{
 aside h3{
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;;
+    margin-bottom: 50px;
+    width: 5.5rem;
 }
 h3#down {
     margin-bottom: 200px;
@@ -133,11 +142,17 @@ main{
 
 main .status {
     margin-left: 30px;
-    position: sticky; /* Make the "Done" heading sticky */
-    top: 0; /* Stick to the top of the viewport */
-    background: white; /* Add a background to prevent overlap */
-    padding: 10px; /* Add some padding for better appearance */
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 10px;
 }
+
+main .empty{
+    margin-top: 10px;
+    color: darkgray;
+}
+
 main .task{
     display: flex;
     flex-direction: column;
@@ -155,23 +170,9 @@ main .task .top{
     margin-bottom: 15px;
 }
 
-main .task .top input{
-    margin-right: 10px;
-    background: coral;
-    accent-color: coral;
-    border: none;
-}
-
 .task .top{
     display: flex;
     margin-bottom: 15px;
-}
-
-.task .top input{
-    margin-right: 10px;
-    background: coral;
-    accent-color: coral;
-    border: none;
 }
 
 .task .top label{

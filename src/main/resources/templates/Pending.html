@@ -1,0 +1,94 @@
+<!Doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/TaskManager.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        main .task {
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <logo>
+            <h3>TaskManager</h3>
+        </logo>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tasks</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <aside>
+        <div class="welcome">
+            <h2>&nbsp;</h2>
+            <p>Welcome, Bashir! </p>
+        </div>
+
+        <div class="content">
+            <h2>Categories</h2>
+            <div class="plus">
+                <h3>
+                    <a th:href="@{/tasks/createTask}">New Task</a>
+                </h3>
+                <img th:src="@{/images/plus.svg}" alt="plus sign">
+            </div>
+            <div class="plus">
+                <h3>
+                    <a th:href="@{/tasks}">Tasks</a>
+                </h3>
+                <img th:src="@{/images/idle.svg}">
+            </div>
+            <div class="plus">
+                <h3>
+                    <a th:href="@{/tasks/idle}">Idle</a>
+                </h3>
+                <img th:src="@{/images/idle.svg}">
+            </div>
+            <div class="plus">
+                <h3>
+                    <a th:href="@{/tasks/pending}">Pending</a>
+                </h3>
+                <img th:src="@{/images/pending.svg}" alt="plus sign">
+            </div>
+            <div class="plus">
+                <h3>
+                    <a th:href="@{/tasks/done}">Done</a>
+                </h3>
+                <img th:src="@{/images/Tasks.svg}" alt="plus sign">
+            </div>
+        </div>
+    </aside>
+    <main>
+        <div class="status">
+            <h2>PENDING</h2>
+        </div>
+        <div class="empty" th:if="${show}">
+          <h3>Pending tasks will be shown here.</h3>
+        </div>
+        <div class="task" th:each="task : ${test}">
+            <div class="top">
+                <input type="checkbox">
+                <label>
+                    <h3 th:text="${task.title}"></h3>
+                    <p th:text="${task.priority}"></p>
+                </label>
+            </div>
+            <p th:text="${task.description}"></p>
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>

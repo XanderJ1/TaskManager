@@ -28,17 +28,5 @@ public class UserWebController {
     public String index(){
         return "index";
     }
-    @GetMapping("/signUp")
-    public String signUp(Model model){
-        return "signUp";
-    }
-    @PostMapping("/signUp")
-    public String createUser(@ModelAttribute("user")RegistrationDTO registrationDTO, BindingResult result){
-        if (result.hasErrors()){
-            return "signUp";
-        }
-        userService.addUser(registrationDTO);
-        return "redirect:/success";
-    }
 
 }

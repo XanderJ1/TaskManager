@@ -3,6 +3,9 @@ package com.bash.taskmanager.Utilities;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 
+/**
+ * Generates key pairs using RSA Algorithm.
+ */
 public class KeyGeneratorUtility {
     public static KeyPair keyGeneratorPair(){
 

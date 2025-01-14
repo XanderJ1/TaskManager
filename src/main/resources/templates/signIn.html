@@ -26,27 +26,13 @@
             </div>
         </div>
 
-        <form th:action="@{/web/signUp}" th:object="${user}" method="POST">
+        <form th:action="@{/web/signIn}" th:object="${user}" method="POST">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required>
 
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" required>
-
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
-
-        <select id="userRole" name="userRole">
-            <option disabled selected> Select Role</option>
-            <option value="ADMIN">ADMIN</option>
-            <option value="USER">USER</option>
-        </select>
-
-            <div class="gree">
-                <input type="checkbox" id="checkbox">
-                <p1>Agree to Terms and conditions</p1>
-            </div>
-            <button type="submit">Sign Up</button>
+        <button type="submit">Sign Up</button>
         </form>
     </main>
 

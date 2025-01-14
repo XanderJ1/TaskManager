@@ -3,6 +3,7 @@ package com.bash.taskmanager.Data.Models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +15,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Data
+@EqualsAndHashCode(exclude = {"task"})
 @Entity
 @Table(name = "appUser")
 public class User implements UserDetails {

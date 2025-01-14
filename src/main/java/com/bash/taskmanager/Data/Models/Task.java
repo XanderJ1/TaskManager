@@ -2,10 +2,12 @@ package com.bash.taskmanager.Data.Models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.LocalDate;
 
 @Data
+@EqualsAndHashCode(exclude = {"assignedUser"})
 @Entity
 public class Task {
     @Id

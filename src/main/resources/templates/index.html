@@ -3,13 +3,12 @@
 <head>
     <title>TaskManager</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" th:href="@{css/index.css}">
 </head>
 <body>
 
-<div class="task" th:each="task : ${test}">
+<div class="task" th:each="task : ${test2}">
     <div class="top">
-        <input type="checkbox">
         <label>
         <h3 th:text="${task.title}"></h3>
         <p th:text="${task.priority}"></p>

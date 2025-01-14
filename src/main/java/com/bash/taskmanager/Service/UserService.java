@@ -52,8 +52,6 @@ public class UserService implements UserDetailsService {
 
     }
 
-
-
     public List<UserDTO> fetchAll(){
         return userRepository.findAll()
                 .stream()
@@ -92,15 +90,17 @@ public class UserService implements UserDetailsService {
         User existingUser = userRepository.findById(id)
                 .orElseThrow(() ->
                         new UsernameNotFoundException("User does not exist"));
-
+        Set<Role> userRole = existingUser.getRole();
+        if (user.getRole() != null){
+            Set<Role> roles = user.getRole();
+            userRole.addAll(roles);
+            roleRepository.saveAll(userRole);
+            user.setRole(userRole);
+        }
         if (user.getUsername() != null)
             existingUser.setUsername(user.getUsername());
         if (user.getEmail() != null)
             existingUser.setEmail(user.getEmail());
         userRepository.save(existingUser);
-    }
-
-    public static void main(String[] args) {
-        System.out.println();
     }
 }
